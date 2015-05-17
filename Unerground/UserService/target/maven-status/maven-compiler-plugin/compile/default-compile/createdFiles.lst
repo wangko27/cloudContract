@@ -1,0 +1,6 @@
+com/veight/user/UserServiceBean.class
+com/veight/user/utils/UserDTOUtils.class
+com/veight/user/dao/UserDao.class
+com/veight/user/entities/UserModel.class
+com/veight/user/dao/impl/UserDaoImpl.class
+com/veight/user/entities/UserModel_.class
