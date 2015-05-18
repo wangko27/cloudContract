@@ -4,12 +4,12 @@
     <parent>
         <artifactId>Unerground</artifactId>
         <groupId>com.veight</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>2.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.veight.admin</groupId>
     <artifactId>AdminService</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <packaging>ejb</packaging>
 
     <name>AdminService</name>
@@ -25,17 +25,17 @@
         <dependency>
             <groupId>com.veight.common</groupId>
             <artifactId>Common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>2.0-SNAPSHOT</version>
         </dependency>
          <dependency>
             <groupId>com.veight.config</groupId>
             <artifactId>Config</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>2.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.veight.admin</groupId>
             <artifactId>Admin</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>2.0-SNAPSHOT</version>
         </dependency>
         <dependency>
            <groupId>com.veight.logging</groupId>

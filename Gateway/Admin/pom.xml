@@ -4,18 +4,18 @@
     <parent>
         <groupId>com.veight</groupId>
         <artifactId>Gateway</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>2.0-SNAPSHOT</version>
     </parent>
     
     <groupId>com.veight.admin</groupId>
     <artifactId>Admin</artifactId>
     <packaging>jar</packaging>
-    
+    <version>2.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>com.veight.common</groupId>
             <artifactId>Common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>2.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
