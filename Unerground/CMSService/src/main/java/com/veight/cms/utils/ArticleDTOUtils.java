@@ -5,8 +5,9 @@
  */
 package com.veight.cms.utils;
 
-import com.veight.cms.api.model.ArticleModel;
-import com.veight.cms.entities.Article;
+import com.veight.cms.entities.ArticleModel;
+import com.veight.cms.model.Article;
+import com.veight.cms.model.Category;
 
 /**
  *
@@ -17,15 +18,23 @@ public class ArticleDTOUtils {
     /**
      * handle article
      *
-     * @param article
+     * @param model
+     * @param category
      * @return
      */
-    public static ArticleModel getArticleModelDTO(Article article) {
+    public static Article getArticleDTO(ArticleModel model, Category category) {
 
-        ArticleModel result = null;
-        if (article != null) {
-            result = new ArticleModel();
-            result.setLastModified(article.getCreated());
+        Article result = null;
+        if (model != null) {
+            result = new Article();
+
+            result.setId(model.getId());
+            result.setTitle(model.getTitle());
+            result.setPreview(model.getPreview());
+            result.setContent(model.getContent());
+            result.setCategory(category);
+            result.setViewCount(model.getViewCount());
+            result.setLastModified(model.getCreated());
         }
         return result;
     }

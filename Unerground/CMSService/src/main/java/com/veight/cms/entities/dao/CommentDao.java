@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.veight.cms.api;
+package com.veight.cms.entities.dao;
 
-import com.veight.cms.model.Article;
-import java.util.List;
+import com.veight.cms.entities.CommentModel;
+import com.veight.common.dao.BaseDao;
 import javax.ejb.Remote;
 
 /**
+ * 文章评论
  *
  * @author youyou
  */
 @Remote
-public interface CMSService {
-
-    public List<Article> getAllArticles();
+public interface CommentDao extends BaseDao<CommentModel, String> {
 
 }

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.veight.cms.api;
+package com.veight.cms.entities.dao;
 
-import com.veight.cms.model.Article;
-import java.util.List;
+import com.veight.cms.entities.CategoryModel;
+import com.veight.common.dao.BaseDao;
 import javax.ejb.Remote;
 
 /**
@@ -14,8 +14,7 @@ import javax.ejb.Remote;
  * @author youyou
  */
 @Remote
-public interface CMSService {
+public interface CategoryDao extends BaseDao<CategoryModel, String> {
 
-    public List<Article> getAllArticles();
-
+    public CategoryModel getByName(String name);
 }

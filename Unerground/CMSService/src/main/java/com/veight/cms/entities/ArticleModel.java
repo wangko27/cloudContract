@@ -31,7 +31,7 @@ import javax.persistence.TemporalType;
 @NamedQueries({
     @NamedQuery(
             name = "ArticleModel.GET_ARTICLE_COUNT_BY_CATEGORY_ID",
-            query = "FROM ArticleModel article WHERE article.category = :category")
+            query = "SELECT count(article) FROM ArticleModel article WHERE article.category = :category")
 })
 public class ArticleModel extends UUIDEntity {
 

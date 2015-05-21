@@ -6,17 +6,17 @@
 package com.veight.cms;
 
 import com.veight.cms.api.CMSService;
-import com.veight.cms.api.model.ArticleModel;
-import com.veight.cms.entities.Article;
+import com.veight.cms.entities.ArticleModel;
+import com.veight.cms.model.Article;
 import com.veight.cms.entities.dao.ArticleDao;
 import com.veight.cms.utils.ArticleDTOUtils;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import org.slf4j.Logger;
 
 /**
  *
@@ -27,19 +27,18 @@ import javax.inject.Inject;
 public class CMSServiceBean implements CMSService {
 
     @Inject
-    org.slf4j.Logger logger;
+    Logger logger;
 
     @EJB
     private ArticleDao articleDao;
 
-    public List<ArticleModel> getAllArticles() {
-        logger.info("!!!!!!!!!!!getAllArticlesgetAllArticlesgetAllArticlesgetAllArticlesgetAllArticlesgetAllArticles!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        List<Article> lists = articleDao.finAll();
-        List<ArticleModel> results = new ArrayList<ArticleModel>(lists.size());
-        for (Article art : lists) {
-            logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            results.add(ArticleDTOUtils.getArticleModelDTO(art));
-        }
+    public List<Article> getAllArticles() {
+//        List<ArticleModel> lists = articleDao.finAll();
+//        List<Article> results = new ArrayList<>(lists.size());
+//        for (ArticleModel art : lists) {
+//            logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+//            results.add(ArticleDTOUtils.getArticleDTO(art));
+//        }
         return null;
     }
 

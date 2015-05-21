@@ -5,8 +5,9 @@
  */
 package com.veight.cms.api;
 
-import com.veight.cms.model.Article;
-import java.util.List;
+import com.veight.cms.model.Category;
+import com.veight.common.query.page.Page;
+import com.veight.common.query.page.Pageable;
 import javax.ejb.Remote;
 
 /**
@@ -14,8 +15,11 @@ import javax.ejb.Remote;
  * @author youyou
  */
 @Remote
-public interface CMSService {
+public interface CategoryService {
 
-    public List<Article> getAllArticles();
+    public Category getByName(String name);
+
+    public Page<Category> findByPage(Pageable pageable);
+;
 
 }

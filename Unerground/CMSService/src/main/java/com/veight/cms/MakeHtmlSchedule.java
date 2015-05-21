@@ -5,12 +5,10 @@
  */
 package com.veight.cms;
 
-import com.veight.cms.entities.Article;
 import com.veight.cms.entities.dao.ArticleDao;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.ejb.EJB;
-import javax.ejb.Remote;
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 import javax.ejb.Stateless;
@@ -27,21 +25,21 @@ import org.slf4j.Logger;
 public class MakeHtmlSchedule {
 
 //    private static final Logger LOGGER = Logger.getLogger(MakeHtmlSchedule.class.getCanonicalName());
-    @Inject
-    Logger logger;
+//    @Inject
+//    Logger logger;
 
-    @EJB
-    private ArticleDao articleDao;
-
-    @Schedule(second = "*/5", minute = "*", hour = "*", persistent = false)
-    public void doWork() {
-//        List<Article> lists = articleDao.finAll();
-//        for (Article art : lists) {
-//            LOGGER.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-"+art.getId());
-//        }
-        Date currentTime = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
-        logger.debug("logger ScheduleExample.doWork() invoked at " + simpleDateFormat.format(currentTime));
-        System.out.println("ScheduleExample.doWork() invoked at " + simpleDateFormat.format(currentTime));
-    }
+//    @EJB
+//    private ArticleDao articleDao;
+//
+//    @Schedule(second = "*/5", minute = "*", hour = "*", persistent = false)
+//    public void doWork() {
+////        List<Article> lists = articleDao.finAll();
+////        for (Article art : lists) {
+////            LOGGER.info("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-"+art.getId());
+////        }
+//        Date currentTime = new Date();
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
+//        logger.debug("logger ScheduleExample.doWork() invoked at " + simpleDateFormat.format(currentTime));
+//        System.out.println("ScheduleExample.doWork() invoked at " + simpleDateFormat.format(currentTime));
+//    }
 }
