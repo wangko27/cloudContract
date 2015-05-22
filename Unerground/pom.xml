@@ -20,5 +20,6 @@
         <module>CMSService</module>
     <module>AdminService</module>
     <module>UserService</module>
+    <module>MailService</module>
   </modules>
 </project>

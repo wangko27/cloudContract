@@ -20,8 +20,8 @@ import org.slf4j.Logger;
  *
  * @author youyou
  */
-@Stateless
-@Singleton
+//@Stateless
+//@Singleton
 public class MakeHtmlSchedule {
 
 //    private static final Logger LOGGER = Logger.getLogger(MakeHtmlSchedule.class.getCanonicalName());
