@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>activeMenu</short-name>
+    <uri>/WEB-INF/tld/activeMenu</uri>
+     <tag>
+        <name>active</name>
+        <tag-class>com.veight.manager.web.tags.ActiveMenuTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>folder</name>
+            <type>boolean</type>
+        </attribute>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>parentMenu</name>
+            <type>java.lang.String</type>
+        </attribute>
+    </tag>
+</taglib>

@@ -3,6 +3,8 @@ package com.veight.cms.entities.dao;
 import com.veight.cms.entities.ArticleModel;
 import com.veight.cms.entities.CategoryModel;
 import com.veight.common.dao.BaseDao;
+import com.veight.common.query.page.Page;
+import com.veight.common.query.page.Pageable;
 import javax.ejb.Remote;
 
 /**
@@ -20,5 +22,7 @@ public interface ArticleDao extends BaseDao<ArticleModel, String> {
      * @return
      */
     public long getArticleCountByCategory(CategoryModel category);
+
+    public Page<ArticleModel> getByPageByCategoryName(Pageable pageable, String categoryName);
 
 }

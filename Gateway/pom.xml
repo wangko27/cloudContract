@@ -21,5 +21,7 @@
         <module>Common</module>
         <module>User</module>
         <module>Admin</module>
+        <module>Mail</module>
+        <module>Storage</module>
     </modules>
 </project>

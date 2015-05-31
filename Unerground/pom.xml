@@ -18,8 +18,9 @@
     <modules>
         <module>ConfigService</module>
         <module>CMSService</module>
-    <module>AdminService</module>
-    <module>UserService</module>
-    <module>MailService</module>
-  </modules>
+        <module>AdminService</module>
+        <module>UserService</module>
+        <module>MailService</module>
+        <module>StorageService</module>
+    </modules>
 </project>

@@ -7,6 +7,7 @@ package com.veight.cms.entities.dao;
 
 import com.veight.cms.entities.TagModel;
 import com.veight.common.dao.BaseDao;
+import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -16,5 +17,11 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface TagDao extends BaseDao<TagModel, String> {
+
+    public TagModel getByName(String name);
+
+    public List<String> getAllNames();
+
+    public List<TagModel> getAll();
 
 }

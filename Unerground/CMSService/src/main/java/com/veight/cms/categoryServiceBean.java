@@ -60,4 +60,18 @@ public class categoryServiceBean implements CategoryService {
         }
         return new Page<>(content, entities.getTotal(), entities.getPageable());
     }
+
+    @Override
+    public List<Category> findAll() {
+        List<Category> content = new ArrayList<>();
+        List<CategoryModel> lists = categoryDao.getAll();
+
+        for (CategoryModel model : lists) {
+            long articleCount = articleDao.getArticleCountByCategory(model);//该栏目文章总数
+            Category category = CategoryDTOUtils.getCategoryDTO(model, articleCount);
+            content.add(category);
+
+        }
+        return content;
+    }
 }

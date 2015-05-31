@@ -7,6 +7,7 @@ package com.veight.cms.entities.dao;
 
 import com.veight.cms.entities.CategoryModel;
 import com.veight.common.dao.BaseDao;
+import java.util.List;
 import javax.ejb.Remote;
 
 /**
@@ -17,4 +18,6 @@ import javax.ejb.Remote;
 public interface CategoryDao extends BaseDao<CategoryModel, String> {
 
     public CategoryModel getByName(String name);
+
+    public List<CategoryModel> getAll();
 }

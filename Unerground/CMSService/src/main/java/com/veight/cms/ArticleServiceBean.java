@@ -45,7 +45,7 @@ public class ArticleServiceBean implements ArticleService {
     CategoryDao categoryDao;
 
     @Override
-    public void create(Article article, Long authorId, String categoryName, String tagString) {
+    public void create(Article article, String authorId, String categoryName, String tagString) {
         ArticleModel model = populateArticle(article, authorId, categoryName, tagString);
 
         logger.debug("create ArticleModel {}", model);
@@ -77,7 +77,7 @@ public class ArticleServiceBean implements ArticleService {
      * @return populated {@link Article}
      * @throws PersistenceException
      */
-    private ArticleModel populateArticle(Article article, Long authorId, String categoryName, String tagString)
+    private ArticleModel populateArticle(Article article, String authorId, String categoryName, String tagString)
             throws PersistenceException {
         ArticleModel model = new ArticleModel();
 
@@ -106,4 +106,29 @@ public class ArticleServiceBean implements ArticleService {
         return model;
     }
 
+    @Override
+    public Article findById(String id) {
+
+        ArticleModel model = articleDao.find(id);
+
+        CategoryModel cModel = model.getCategory();
+        Category category = CategoryDTOUtils.getCategoryDTO(cModel, articleDao.getArticleCountByCategory(cModel));
+
+        Article article = ArticleDTOUtils.getArticleDTO(model, category);
+
+        return article;
+    }
+
+    @Override
+    public Page<Article> getPageByCategoryName(Pageable pageable, String categoryName) {
+        List<Article> content = new ArrayList<>();
+        Page<ArticleModel> entites = articleDao.getByPageByCategoryName(pageable, categoryName);
+
+        for (ArticleModel model : entites.getContent()) {
+            CategoryModel cModel = model.getCategory();
+            Category category = CategoryDTOUtils.getCategoryDTO(cModel, articleDao.getArticleCountByCategory(cModel));
+            content.add(ArticleDTOUtils.getArticleDTO(model, category));
+        }
+        return new Page<>(content, entites.getTotal(), entites.getPageable());
+    }
 }

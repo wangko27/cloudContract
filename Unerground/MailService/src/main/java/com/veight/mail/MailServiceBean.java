@@ -25,6 +25,7 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 
 /**
+ * 邮件发送实现
  *
  * @author youyou
  */
@@ -52,15 +53,22 @@ public class MailServiceBean implements MailService {
         }
     }
 
+    /**
+     * 邮件真是发送中.需要自己定义邮件发送模板 放到resources 的com.veight.mail.template下
+     *
+     * @param type
+     * @param subject
+     * @param emailAddress
+     * @param content
+     * @return
+     */
     @Override
     public Future<Boolean> send(EmailType type, String subject, String emailAddress, String... content) {
         try {
             logger.debug("邮件发送");
-
             String text = template.getContent(type, content);
-
             Message message = new MimeMessage(mailSession);
-//            message.setFrom(new InternetAddress("joey.zhangpeng@gmail.com"));
+            message.setFrom(new InternetAddress("845885222@qq.com"));
             Address toAddress = new InternetAddress(emailAddress);
             message.addRecipient(Message.RecipientType.TO, toAddress);
             message.setSubject(subject);

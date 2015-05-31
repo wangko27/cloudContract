@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -15,6 +17,17 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "TB_TAG")
+@NamedQueries({
+    @NamedQuery(
+            name = "TagModel.GET_ALL",
+            query = "FROM TagModel t ORDER BY t.name"),
+    @NamedQuery(
+            name = "TagModel.GET_ALL_NAMES",
+            query = "SELECT t.name FROM TagModel t ORDER BY t.name"),
+    @NamedQuery(
+            name = "TagModel.GET_BY_NAME",
+            query = "FROM TagModel t WHERE t.name = :name")
+})
 public class TagModel extends UUIDEntity {
 
     private static final long serialVersionUID = 984410247121721301L;

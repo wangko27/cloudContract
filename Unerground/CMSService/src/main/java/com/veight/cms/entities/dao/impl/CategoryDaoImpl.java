@@ -8,6 +8,7 @@ package com.veight.cms.entities.dao.impl;
 import com.veight.cms.entities.CategoryModel;
 import com.veight.cms.entities.dao.CategoryDao;
 import com.veight.common.dao.impl.BaseDaoImpl;
+import java.util.List;
 import javax.ejb.Stateless;
 
 /**
@@ -20,9 +21,13 @@ public class CategoryDaoImpl extends BaseDaoImpl<CategoryModel, String> implemen
 
     @Override
     public CategoryModel getByName(String name) {
-        
+
         return entityManager.createNamedQuery("CategoryModel.GET_BY_NAME", CategoryModel.class)
                 .setParameter("name", name).getSingleResult();
     }
 
+    @Override
+    public List<CategoryModel> getAll() {
+        return entityManager.createNamedQuery("CategoryModel.GET_ALL", CategoryModel.class).getResultList();
+    }
 }

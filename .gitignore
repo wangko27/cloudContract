@@ -1,0 +1,16 @@
+/Facilities-ear/target/
+/Gateway/Model/target/
+/Gateway/Config/target/
+/Gateway/Common/target/
+/Gateway/CMS/target/
+/Gateway/Admin/target/
+/Gateway/User/target/
+/Unerground/ConfigService/target/
+/Unerground/CMSService/target/
+/Unerground/AdminService/target/
+/Unerground/UserService/target/
+/Gateway/Mail/target/
+/Unerground/MailService/target/
+/Gateway/Storage/target/
+/Unerground/StorageService/target/
+/VeightMarket/target/

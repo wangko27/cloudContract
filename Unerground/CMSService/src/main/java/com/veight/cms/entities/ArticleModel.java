@@ -30,6 +30,12 @@ import javax.persistence.TemporalType;
 @Table(name = "TB_ARTICLE")
 @NamedQueries({
     @NamedQuery(
+            name = "ArticleModel.GET_ALL_BY_CATEGORY_NAME",
+            query = "FROM ArticleModel article WHERE article.category.name = :name ORDER BY article.created DESC"),
+    @NamedQuery(
+            name = "ArticleModel.COUNT_ALL_BY_CATEGORY_NAME",
+            query = "SELECT count(article) FROM ArticleModel article WHERE article.category.name = :name ORDER BY article.created DESC"),
+    @NamedQuery(
             name = "ArticleModel.GET_ARTICLE_COUNT_BY_CATEGORY_ID",
             query = "SELECT count(article) FROM ArticleModel article WHERE article.category = :category")
 })

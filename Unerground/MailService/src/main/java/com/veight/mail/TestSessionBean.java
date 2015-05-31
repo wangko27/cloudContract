@@ -24,9 +24,9 @@ public class TestSessionBean {
     @EJB
     MailService MailService;
 
-    @Schedule(hour = "*", minute = "*", second = "*/10")
+//    @Schedule(hour = "*", minute = "*", second = "*/10")
     public void doWork() {
         System.out.println("doWork");
-        MailService.send(EmailType.MAIL_TEST, "测试邮件-标题", "2900196090@qq.com", "测试邮件");
+        MailService.send(EmailType.MAIL_TEST, "测试邮件-标题", "845885222@qq.com", "测试邮件");
     }
 }
